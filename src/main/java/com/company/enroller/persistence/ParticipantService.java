@@ -29,13 +29,13 @@ public class ParticipantService {
 	}
 
 	public void add(Participant participant) {
-		Transaction transaction = this.connector.getSession().beginTransaction();
+		Transaction transaction = this.session.beginTransaction();
 		session.save(participant);
 		transaction.commit();
 	}
 
 	public void delete(Participant participant) {
-		Transaction transaction = this.connector.getSession().beginTransaction();
+		Transaction transaction = this.session.beginTransaction();
 		session.delete(participant);
 		transaction.commit();
 	}
